@@ -1,0 +1,165 @@
+
+#Products{
+
+    .form-control:focus{
+        box-shadow: 0 0 3px 3px #0aad0aaf !important;
+        border-color:  #0aad0a;
+    }
+      
+    .parent-card{
+        border-radius: 8px;
+            &:hover{  
+                box-shadow: 0 0 5px 1px #0aad0a94; 
+                  
+                .main-btn{
+                    bottom: 10px;
+                }
+                .move-icon{
+                    right: 30px;
+                }
+            }
+      
+            .card{
+                padding-bottom: 80px;
+                border: none; 
+            }
+    }
+          
+    .main-btn{
+        font-size: 16px;
+        bottom: -70px;
+        left: 50%;
+    }
+      
+    .move-icon{
+        top: 20px;
+        right: -50px;
+    }
+      
+      
+    //animated button ADD PRODUCT
+    .button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid #34974d;
+        background-color: #3aa856;
+    }
+      
+    .button__icon, .button__text {
+        transition: all 0.3s;
+    }
+      
+    .button .button__text {
+        color: #fff;
+        font-weight: 600;
+        width: 80%;
+    }
+      
+    .button .button__icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 20%;
+        background-color: #34974d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .button .svg {
+        width: 30px;
+        stroke: #fff;
+    }
+      
+    .button:hover {
+        background: #34974d;
+    }
+      
+    .button:hover .button__text {
+        color: transparent;
+    }
+      
+    .button:hover .button__icon {
+        width: 100%;
+    }
+      
+    .button:active .button__icon {
+        background-color: #2e8644;
+    }
+      
+    .button:active {
+        border: 1px solid #2e8644;
+    } 
+} 
+  
+  @media (max-width: 525px) { 
+    .rating{
+      font-size: 12px;
+    }
+  
+    .parent-card{
+      .button{
+        padding: 5px 2.5px;
+      }
+  
+      .card-body .card-text{
+        font-size: 12px;
+      }
+      .move-icon{
+        top: 10px !important;
+        i{
+          font-size: 28px !important;
+          }
+      }
+      &:hover{   
+          .move-icon{
+              right: 15px !important;
+          }
+      }
+    }
+  }
+  
+  @media (min-width: 525px ) and (max-width: 1364.9999px) { 
+    .rating{
+      font-size: 14px;
+    }
+  
+    .parent-card{
+      .button{
+        padding: 5px 2.5px;
+      }
+  
+      .move-icon{
+        top: 10px !important;
+        i{
+          font-size: 28px !important;
+          }
+      }
+      &:hover{   
+          .move-icon{
+              right: 18px !important;
+          }
+      }
+    }
+  }
+  
+  @media (min-width: 991px) and (max-width: 1365px)  { 
+      .rating {
+        font-size: 14px;
+      }
+  
+      .parent-card{
+        &:hover{   
+          .move-icon{
+              right: 17px !important;
+              top: 10px !important;
+          }
+      }
+    }
+  
+  
+    
+  }
+  

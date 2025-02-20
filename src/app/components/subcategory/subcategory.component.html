@@ -1,0 +1,17 @@
+<section id="sub-categories" class="mt-5 mb-4">
+    <div class="container">
+        <h2 class="cat-name text-center pb-3 fw-bold">{{specCategories.name}} Subcategories</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 ">
+            <div *ngFor="let subCategory of subCategories" class="btns text-center">
+                <div>
+                    <button class="btn">
+                        <i class="animation"></i>
+                        {{subCategory.name}}
+                        <i class="animation"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

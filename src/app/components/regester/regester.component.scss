@@ -1,0 +1,19 @@
+#register{
+    margin-top: 4rem;
+    width: 60%;
+    .form-control:focus{
+        box-shadow: 0 0 3px 3px #0aad0aaf !important;
+        border-color:  #0aad0a;
+    }
+
+    .errors p{
+        margin: 0px;
+    }
+
+}
+
+@media (max-width: 768px) { 
+    #register{
+       width: 95% !important;
+    }
+}

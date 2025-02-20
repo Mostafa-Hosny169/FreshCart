@@ -1,0 +1,62 @@
+<main class="pb-5">
+    <section id="cart-data" class="bg-main-light w-75 mx-auto rounded shadow p-4 mt-4" *ngIf="cartProducts!==null">
+
+        <h1 class="text-center fw-medium pb-3">CART SHOP</h1>
+    
+        <div class="row hstack">
+            <div class="col-6">
+                <h3 class="h6 font">Total Price : <span class="text-main price">{{cartProducts.totalCartPrice|currency:' '}}</span></h3>
+            </div>
+            <div class="col-6 text-end">
+                <h3 class="h6 font"> Cart Items : <span class="text-main price">{{cartProducts.products.length}}</span></h3>   
+            </div>
+        </div>
+        
+        <button  (click)="clearCart()" class="btn btn-outline-danger clear-btn mt-1 mb-3" #clear>
+            <i class="fas fa-trash"></i> Clear Cart
+        </button>
+    
+        <div class="row border-bottom py-3" *ngFor="let item of cartProducts.products"> 
+                <div class="col-md-1">
+                    <div class="image">
+                    <img class="w-100" [src]="item.product.imageCover" [alt]="item.product.title">
+                    </div>
+                </div>   
+    
+                <div class="col-md-11">
+                    <div class="row">
+                        <div class="col-7 ">
+                            <div class="details-cart mt-2">
+                                <h3 class=" h6"> {{item.product.title | cuttext}} </h3>
+                                <h3 class=" h6 ">Price : <span class=" price text-main">{{item.price | currency:' '}} EGP</span></h3>   
+                                <button (click)="removeItem(item.product._id , remove)" class=" px-0 mt-2 remove-btn" #remove>
+                                    <span><i class="fas fa-trash"></i> Remove</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-5  text-end">
+                            <div class="add-delet mt-4">
+                                <button (click)="updateItem(item.product._id , item.count+1  , plus)" #plus class="btn-count"><i class="fa-solid fa-plus "></i></button>
+                                <span class="h5 text-main px-md-1"> {{item.count}} </span>
+                                <button (click)="updateItem(item.product._id , item.count-1 , minus )" #minus class="btn-count"><i class="fa-solid fa-minus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    
+    </section>
+    
+    <section id="not-found" *ngIf="cartProducts==null">
+        <div class="container ">
+            <img class="w-50" src="./assets/images/cart_empty.png" alt="Cart Image">
+            <div class="hold">
+                <h1>Your Cart Is Empty.....</h1>
+                <button (click)="toHome()">Fill Your Cart</button>
+            </div>
+        </div>
+    
+       
+       
+    </section>
+</main>

@@ -1,0 +1,100 @@
+#wish-list{
+    .parent-card{
+        border-radius: 8px;  
+        box-shadow: 0 0 5px 1px #0aad0a94; 
+    }
+  
+    .main-btn{
+        font-size: 16px;
+        bottom: 10px;
+        left: 50%;
+    }
+
+    .move-icon{
+        top: 20px;
+        right: 20px;
+    }
+}
+
+
+ @media (max-width: 620px) { 
+   
+     .rating{
+       font-size: 12px;
+     }
+  
+     .card .title{
+        font-size: 14px ;
+    }
+
+    .parent-card{
+        .button{
+            padding: 5px 2.5px;
+        }
+
+        .card-body .card-text{
+            font-size: 11px;
+        }
+
+        .move-icon{
+            top: 10px !important;
+            right: 15px !important;
+            i{
+            font-size: 28px !important;
+            }
+        }
+    }
+
+    #not-found .hold{
+        h1{
+            font-size: 17px;
+        }
+        button{
+            width: 8em;
+            height: 2.5em;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (min-width:767.98px) and (max-width: 1199.98px)  { 
+    .rating {
+        font-size: 12px;
+    } 
+    .card .title{
+        font-size: 15px ;
+    }
+
+    .parent-card{
+       .move-icon{
+         top: 10px !important;
+         right: 15px !important;
+       }
+     }
+
+     #not-found .hold{
+        h1{
+            font-size: 28px;
+        }
+        button{
+            width: 8em;
+            height: 2.5em;
+        }
+    }
+  
+    
+}
+
+@media (min-width:620px) and (max-width: 767.98px){
+    #not-found .hold{
+        h1{
+            font-size: 23px;
+        }
+        button{
+            width: 8em;
+            height: 2.5em;
+            font-size: 15px;
+        }
+    }
+}
+

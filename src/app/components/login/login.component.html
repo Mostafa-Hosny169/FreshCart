@@ -1,0 +1,40 @@
+<main class="pb-5">
+    <section id="login" class="bg-main-light mx-auto rounded shadow p-5 ">
+    
+        <h2 class="text-center mb-2">Login</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="handleForm()">
+    
+        <p *ngIf="errMsg" class="alert alert-danger mt-5">{{errMsg}}</p>
+    
+        <div class="input-item mt-3">
+            <label for="email">Email :</label>
+            <input type="email" id="email" formControlName="email" class="form-control">
+            
+            <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors" class="errors alert alert-danger mt-3">
+                <p *ngIf="loginForm.get('email')?.getError('required')">Email Is Required</p>
+                <p *ngIf="loginForm.get('email')?.getError('email')">Email Pattern Is Inavalid</p>
+            </div>   
+        </div>
+    
+        <div class="input-item mt-3">
+            <label for="password">Password :</label>
+            <input type="password" id="password" formControlName="password" class="form-control">
+    
+            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors" class="errors alert alert-danger mt-3">
+                <p *ngIf="loginForm.get('password')?.getError('required')">Passowrd Is Required</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')">Password Pattern Is Inavalid</p>
+            </div>
+        </div>
+    
+        <div class="mt-4 hstack justify-content-between">
+            <p class="h5 forgrt-pass ">Forget Your Password ? </p>
+            <button [disabled]="loginForm.invalid" class="main-btn">
+                <span *ngIf="!isLoading">Login now</span>
+                <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span>
+            </button>
+        </div>
+    </form>
+    </section>
+    
+</main>

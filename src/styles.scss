@@ -1,0 +1,232 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@500&family=Roboto:wght@100;300;400;500;700;900&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+$shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+  rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+  rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+$rating-color: #f0be08;
+$main-transition: .7s;
+
+
+
+body{
+    $font-family: "Encode Sans Expanded", sans-serif;
+}
+
+.transition{
+    transition-duration: $main-transition;
+}
+
+.rating-color{
+    color: $rating-color;
+}
+
+.text-main{
+    color: $main-color;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.bg-main-light{
+    background-color: $light-color;
+}
+
+.main-btn{
+    background-color: $main-color;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: unset;
+    font-size: 19px;
+    &:hover{
+        background-color: #089808;
+    }
+    
+}
+
+.fav{
+    font-size: 30px;
+} 
+
+
+.main-btn:disabled{
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.553);
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+.font-sm{
+    font-size: 12px;
+}
+
+.active-link{
+    background-color: $main-color;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f0f3f2;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #049704f7;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 60px #049704f7;
+    border-radius: 2px;
+  }
+
+  .toast-success{
+    position: fixed !important;
+    bottom: 5px ;
+    right: 10px ;
+  }
+
+
+  #home , #wish-list{
+    .parent-card{
+        border-radius: 8px;
+        &:hover{  
+            box-shadow: 0 0 5px 1px #0aad0a94; 
+            
+            .main-btn{
+                bottom: 10px;
+            }
+            .move-icon{
+                right: 30px;
+            }
+        }
+
+        .card{
+            padding-bottom: 80px;
+            border: none; 
+        }
+    }
+    
+    .main-btn{
+        font-size: 16px;
+        bottom: -70px;
+        left: 50%;
+    }
+
+    .move-icon{
+        top: 20px;
+        right: -50px;
+    }
+
+
+//animated button ADD PRODUCT
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+ .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  color: #fff;
+  font-weight: 600;
+  width: 80%;
+}
+
+.button .button__icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 100%;
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+
+}
+
+//not found any////////////////
+//animated button
+   #not-found{
+    .container{
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px;
+        width: 9em;
+        height: 3em;
+        border-radius: 30em;
+        font-weight: 500;
+        font-family: inherit;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+       }
+       
+       button::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 30em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+       }
+       
+       button:hover::before {
+        width: 9em;
+       }
+   }
+  

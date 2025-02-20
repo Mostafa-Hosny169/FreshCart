@@ -1,0 +1,15 @@
+<section id="categories" class="my-4">
+    <div class="container-fluid">
+        <div class="row g-4 row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 justify-content-center">
+            <div  *ngFor="let category of categoriesData" >
+                <div [routerLink]="['/subcategories',category._id]" class="card cursor-pointer"> 
+                    <img class="card-img-top w-100" [src]="category.image" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title text-main h5">{{category.name}}</h4>      
+                        </div>  
+                </div>
+            </div>      
+        </div>
+    </div>
+   
+</section>

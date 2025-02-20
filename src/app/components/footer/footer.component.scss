@@ -1,0 +1,39 @@
+:host{
+    margin-top: auto;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 3px 3px #0aad0aaf !important;
+    border-color:  #0aad0a;
+}
+
+.boorder{
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.delivers button{
+    .avilable{
+        font-size: 10px;
+        
+    }
+    .app{
+       margin-top: -8px !important ;
+    };
+}
+
+@media (max-width: 1130px) { 
+        .none{
+            display: none;
+        }
+        .payment{
+            width: fit-content;
+            margin-inline: auto;
+        }
+        .shar-link{
+            flex-wrap: wrap;
+            .main-btn{ 
+                margin-inline: auto;
+                width: 50%;
+            }
+        }
+   }

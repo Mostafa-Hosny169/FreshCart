@@ -1,0 +1,32 @@
+<section id="product-detail" class="pb-5 ">
+    <div class="container mt-5 bg-main-light mx-auto rounded shadow p-5">
+        <div class="row align-items-center g-5">
+            <div class="col-md-4">
+                <owl-carousel-o [options]="productDetialSlider">
+                    <ng-container *ngFor="let slide of proudctDetalisData.images">
+                      <ng-template carouselSlide>
+                        <img [src]="slide" >
+                      </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+            
+            <div class="col-md-8">
+                <h2>{{proudctDetalisData.title}}</h2>
+                <p>{{proudctDetalisData.description}}</p>
+                <div class="price d-flex justify-content-between align-items-center">
+                    <span>{{proudctDetalisData.price|currency:' '}} EGP</span>
+                    <span class="fw-medium">
+                        <i *ngFor="let star of [1,2,3,4,5]" [class]="proudctDetalisData.ratingsAverage>=star?'rating-color':''" class="fas fa-star"></i>
+                        {{proudctDetalisData.ratingsAverage}}
+                    </span>
+                </div>
+                <div class=" d-flex justify-content-between align-items-center mt-5">
+                    <button (click)="addProduct(addItem)" #addItem class="main-btn cursor-pointer w-75 fw-medium "><span class="h4">+</span> Add</button>
+                    <span *ngIf="!wishListItms.includes(proudctDetalisData._id)" (click)="addWishlist(proudctDetalisData._id)" class="move-icon cursor-pointer"><i class="fa-regular fa-heart fa-2xl fav text-main"></i></span>
+                    <span *ngIf="wishListItms.includes(proudctDetalisData._id)" (click)="removeWishlist(proudctDetalisData._id)" class="move-icon cursor-pointer"><i class="fa-solid fa-heart fa-2xl fav text-main"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

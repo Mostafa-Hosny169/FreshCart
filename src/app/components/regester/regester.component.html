@@ -1,0 +1,89 @@
+
+<main class="pb-5">
+    <section id="register" class="bg-main-light mx-auto rounded shadow p-5 ">
+
+        <h2 class="text-center mb-2">Register Now</h2>
+        
+        <p *ngIf="errMsg" class="alert alert-danger  mt-5">{{errMsg}}</p>
+        
+        <form [formGroup]="registerForm" (ngSubmit)="handleForm()">
+        
+            <div class="input-item mt-3">
+                <label for="name">Name :</label>
+                <input type="text" id="name" formControlName="name" class="form-control">
+        
+                <div *ngIf=" registerForm.get('name')?.touched && registerForm.get('name')?.errors" class="errors alert alert-danger mt-3">
+                    <p *ngIf="registerForm.get('name')?.getError('required')">Name Is Required</p>
+                    <p *ngIf="registerForm.get('name')?.getError('minlength')">Name MinLength 3</p>
+                    <p *ngIf="registerForm.get('name')?.getError('maxlength')">Name MaxLength 10</p>
+                </div>
+            </div>
+        
+            <div class="input-item mt-3">
+                <label for="email">Email :</label>
+                <input type="email" id="email" formControlName="email" class="form-control">
+                
+                <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors" class="errors alert alert-danger mt-3">
+                    <p *ngIf="registerForm.get('email')?.getError('required')">Email Is Required</p>
+                    <p *ngIf="registerForm.get('email')?.getError('email')">Email Pattern Is Inavalid</p>
+                </div>   
+            </div>
+        
+            <div class="input-item mt-3">
+                <label for="password">Password :</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+        
+                <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors" class="errors alert alert-danger mt-3">
+        
+                    <p *ngIf="registerForm.get('password')?.getError('required')">Passowrd Is Required</p>
+                    <div *ngIf="registerForm.get('password')?.getError('pattern')">
+                        <h6 class="m-0">must be</h6>
+                        <p>* Start with a letter (either uppercase or lowercase).</p>
+                        <p>* Be between 6 and 9 characters in total.</p>
+                        <p>* Can only contain letters (A-Z or a-z) and numbers (0-9)</p>
+                    </div> 
+        
+                </div>
+            </div>
+        
+            <div class="input-item mt-3">
+                <label for="rePassword">Re-password :</label>
+                <input type="password" id="rePassword" formControlName="rePassword" class="form-control">
+        
+                <div *ngIf="registerForm.get('rePassword')?.touched && registerForm.get('rePassword')?.errors" class="errors alert alert-danger mt-3">
+        
+                    <p *ngIf="registerForm.get('rePassword')?.getError('required')">Passowrd Is Required</p>
+                    <div *ngIf="registerForm.get('rePassword')?.getError('pattern')">
+                        <h6 class="m-0">must be</h6>
+                        <p>* Start with a letter (either uppercase or lowercase).</p>
+                        <p>* Be between 6 and 9 characters in total.</p>
+                        <p>* Can only contain letters (A-Z or a-z) and numbers (0-9)</p>
+                    </div> 
+        
+                </div>
+            </div>
+        
+            <div class="input-item mt-3">
+                <label for="phone">Phone :</label>
+                <input type="tel" id="phone" formControlName="phone" class="form-control">
+        
+                <div *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.errors" class="errors alert alert-danger mt-3">
+                    <p *ngIf="registerForm.get('phone')?.getError('required')">Phone Is Required</p>
+                    <p *ngIf="registerForm.get('phone')?.getError('pattern')">Invalid Phone Number</p>
+                </div>
+            </div>
+        
+            <div class="mt-4 text-end">
+            <button [disabled]="registerForm.invalid" class="main-btn">
+                <span *ngIf="!isLoading">Resgister now</span>
+               <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span> 
+            </button>
+            </div>
+        
+            
+            
+        </form>
+            
+        </section>
+        
+</main>
